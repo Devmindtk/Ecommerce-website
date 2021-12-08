@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Product items</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</head>
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Raleway&display=swap');
+	
+	h5
+	{
+	
+  
+ 
+color:grey;
+
+font-family: 'Avenir','proxima-nova','arial',sans-serif;
+font-size: 15px;
+text-transform: uppercase;
+
+	}
+  .card-body
+  {
+    background: #fcfcfb;
+    padding:5px;
+
+   
+  }
+	.img
+	{
+		overflow: hidden;
+
+	}
+  
+	a
+  {
+    float:left;
+  }
+  #rating
+  {
+    border:2px solid white;
+    background:#ff9248;
+    border-radius:13px;
+    float:left;
+    padding:0px 7px;
+    font-size:13px;
+    color:white;
+    margin-top:17px;
+    margin-bottom:-7px;
+
+  }
+  
+  #details
+  {
+    display: flex;
+    flex-direction: horizontal;
+
+  }
+  .star
+  {
+    color: white;
+    font-size: 5px;
+    padding:5px;
+  }
+ 
+#cont
+  {
+    width:80%;
+    padding:10px;
+    max-width:100%;  
+  }
+  
+  
+  
+  
+  .card-text
+  {
+    font-size:14px;
+    font-weight:600;
+   
+  }
+  #tooltip
+  {
+    font-family: 'Alegreya Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+   color:#545454;
+
+
+  }
+
+  
+    .card:hover
+    {
+
+  transform: translateY(-5px);
+  border-bottom-color: #ef7f4d;
+
+    }
+  .card
+  {
+    
+     box-shadow:0px 10px 29px 0px lightgray;
+     
+     transition: all 0.3s ease-in-out;
+     border: none;
+     border-bottom: 3px solid #fff;
+     
+    margin:8px 10px;
+    border-radius:0px;
+  }
+
+  body
+  {
+    background-color:#fff;
+  }
+  
+  .event
+  {
+    font-size:13px;
+    margin:0px;
+    padding-bottom:1px;
+    color:lightgrey;
+  }
+  .discount
+  {
+    display:flex;
+    flex-direction:column; 
+    float:right;
+
+
+}
+.discountdet
+{
+  font-size: 12px
+  
+  padding-bottom:0px;
+}
+
+a
+{
+  font-size:12px;
+}
+#price
+{
+  
+  text-align:right;
+ 
+
+}
+#date
+{
+  font-size:13px;
+}
+
+
+.eventdet
+{
+  margin-top:30px;
+  margin-bottom: -40px;
+  padding-left:2px;
+  
+}
+
+
+
+a
+{
+  text-decoration:none;
+}
+
+
+
+
+
+ 
+	</style>
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-light bg-primary">
+        <div class="container">
+        <a class="navbar-brand" href="#">Company name</a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline  my-2 my-lg-0 mx-3">
+                <div class="input-group">
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search" size="50">
+              <div class="input-group-append">
+             <span class="input-group-text"><i class="fa fa-search" aria-hidden="true" ></i></span> 
+             </div>
+              </div>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item  ">
+                    <button class="btn btn-light px-4 my-2 mx-3" type="submit" ><a href="login.html" style="color:black;text-decoration:none;">Login</a></button>
+                </li>
+
+                <li class="nav-item ">
+                  <a class="nav-link" href="cart.html" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false" style="color:white;">
+                    <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:30px; color:white" ></i>Cart
+                  </a>
+                 
+                </li>
+               
+              </ul>
+          </div>
+        </nav>
+<div class="container justify-content-center align-items-center " id="cont">
+	<div class="row" id="cardsrow">
+		<div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+    
+  	<div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid "alt="not supported">
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+     
+       
+       
+       <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+     
+    </div>
+  </div>
+    
+  </div>
+</a>
+  <div class="col-12 mb-2 col-md-6 col-xl-3 " >
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported" >
+
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+              
+       <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+</a>
+   <div class="col-12 mb-2 col-md-6 col-xl-3 ">
+  <div class="card">
+  	<div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title" >Card title</h5>
+     <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+     
+       <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+  </div>
+</a>
+
+   <div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+  	<div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt=" not supported">
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+     <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+      
+        <p id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow"class="star"></i></p>
+        <div class="discount">
+       <span  id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+
+</div>
+</a>
+</div>
+
+<div class="row " id="cardsrow">
+    <div class="col-12 mb-2 col-md-6 col-xl-3" >
+  <div class="card">
+    
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+      
+       <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow"class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+</a>
+  <div class="col-12 mb-2 col-md-6 col-xl-3" >
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported" >
+
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+     <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+    
+       <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+</a>
+   <div class="col-12 mb-2 col-md-6 col-xl-3 ">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title" >Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+      
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span  id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+     
+    </div>
+  </div>
+    
+
+  </div>
+</a>
+   <div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt=" not supported">
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+      
+        <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+        <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+
+</div>
+</a>
+</div>
+<div class="row " id="cardsrow">
+    <div class="col-12 mb-2 col-md-6 col-xl-3" >
+  <div class="card">
+    
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+     
+       <p id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+</a>
+  <div class="col-12 mb-2 col-md-6 col-xl-3 " >
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported" >
+
+</div>
+<a href="productdetails.html" style="text-decoration:none;">
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span  id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+</a>
+   <div class="col-12 mb-2 col-md-6 col-xl-3 ">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title" >Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+     
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span  id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+     
+    </div>
+  </div>
+    
+
+  </div>
+   <div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt=" not supported">
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world</p>
+     
+        <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+        <div class="discount">
+       <span  id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="row " id="cardsrow">
+    <div class="col mb-2 col-md-6 col-lg-6 col-xl-3 col-sm-12 col-xs-12 " >
+  <div class="card">
+    
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price"style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+  <div class="col-12 mb-2 col-md-6 col-xl-3" >
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported" >
+
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+    </div>
+  </div>
+    
+  </div>
+   <div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt="not supported">
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title" >Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+       <p class="card-text" id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+     
+    </div>
+  </div>
+    
+
+  </div>
+   <div class="col-12 mb-2 col-md-6 col-xl-3">
+  <div class="card">
+    <div class="img">
+    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top fluid thumbnail" alt=" not supported">
+</div>
+    <div class="card-body p-1">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text" id="tooltip">This is a wider card with supporting text hello world </p>
+      
+        
+        <p  id="details"><p id="rating"> 4.7 <i class="fa fa-star" style="color:yellow" class="star"></i></p>
+       <div class="discount">
+       <span id="price" style="float:right"> $25 </span></p>
+       <a href="#"class="discountdet">you saved 20%</a>
+     </div>
+     </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+ 
+  </body>
+</html>
